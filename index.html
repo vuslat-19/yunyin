@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>碎片工作台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./trends.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#today"><span>碎片</span>工作台 <i>v1.0</i></a>
+      <nav aria-label="主导航">
+        <a class="active" href="#today">今日雷达</a>
+        <a href="#assets">素材池</a>
+        <a href="#make">发布包</a>
+        <a href="#review">复盘</a>
+      </nav>
+      <button id="newAsset" class="ink-button">＋ 放入素材</button>
+    </header>
+
+    <main>
+      <section id="today" class="hero">
+        <div>
+          <p class="eyebrow">2026.08.13 · WED · 热点已到达</p>
+          <p class="eyebrow">今日最热 · 平台来源已核</p>
+          <h1 id="topTrendTitle">#情绪急救盒</h1>
+          <p id="topTrendSignal" class="top-trend-signal">“盒子 / 抽屉 / 包里有什么”正在成为具体、可参与的情绪叙事容器。</p>
+        </div>
+        <aside class="signal-card">
+          <span class="pulse"></span>
+          <p id="topTrendPlatform">抖音 · 物件叙事</p>
+          <strong id="topTrendAction">九十：今天不想解释的<br />3 件物品</strong>
+          <small id="topTrendDetail">借「容器 + 3 个物件」结构</small>
+        </aside>
+      </section>
+
+      <section class="quick-row" aria-label="工作流进度">
+        <div><b id="assetCount">2</b><span>未使用素材</span></div>
+        <div><b id="selectedCount">0</b><span>今日已选</span></div>
+        <div><b>9:30</b><span>明日雷达</span></div>
+        <button id="showSelected">只看已选 →</button>
+      </section>
+
+      <section id="trends" class="trend-section">
+        <div class="section-heading"><p>趋势卡</p><h2>今天还能借的 3 个具体信号</h2></div>
+        <div id="trendCards" class="trend-cards"></div>
+      </section>
+
+      <section class="section-heading"><p>今日雷达</p><h2>每个账号，三种不一样的说法</h2></section>
+      <div id="ideaBoards" class="idea-boards"></div>
+
+      <section id="assets" class="workspace-section assets-section">
+        <div class="section-heading"><p>素材池</p><h2>把还没有名字的东西，先留在这里</h2></div>
+        <div class="asset-composer">
+          <textarea id="assetText" placeholder="一张图、一个链接、一句收藏的文案，或者你今天的一个片段…"></textarea>
+          <div class="composer-bottom">
+            <select id="assetAccount"><option value="三个账号都可">三个账号都可</option><option value="九十">九十</option><option value="VuslatQ">VuslatQ</option><option value="Vuslat_19">Vuslat_19</option></select>
+            <button id="saveAsset">存进素材池</button>
+          </div>
+        </div>
+        <div id="assetList" class="asset-list"></div>
+      </section>
+
+      <section id="make" class="workspace-section make-section">
+        <div class="section-heading"><p>发布包</p><h2>选中一个方向，再把它做完整</h2></div>
+        <div id="publishEmpty" class="empty-state">先在上方勾选一个选题。<br /><span>这里会生成你需要的标题、结构和素材清单。</span></div>
+        <article id="publishCard" class="publish-card hidden"></article>
+      </section>
+
+      <section id="review" class="workspace-section review-section">
+        <div class="section-heading"><p>复盘</p><h2>不是判断你够不够好，只找下一次该留下什么</h2></div>
+        <div class="review-grid">
+          <div class="review-note"><strong>24h 后</strong><p>填播放/曝光、点赞、评论、收藏、分享与涨粉。</p></div>
+          <div class="review-note"><strong>7d 后</strong><p>回答一件事：哪种情绪、首句或画面值得再做一次？</p></div>
+          <button id="openExcel" class="outline-button">打开完整复盘表 ↗</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="assetDialog">
+      <button class="close" aria-label="关闭">×</button>
+      <p class="eyebrow">素材池</p><h2>先留下，不急着做完</h2>
+      <textarea id="dialogAssetText" placeholder="粘贴文案、图片路径、链接或灵感碎片…"></textarea>
+      <select id="dialogAssetAccount"><option value="三个账号都可">三个账号都可</option><option value="九十">九十</option><option value="VuslatQ">VuslatQ</option><option value="Vuslat_19">Vuslat_19</option></select>
+      <button id="dialogSave">存进素材池</button>
+    </dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>
