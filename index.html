@@ -60,7 +60,7 @@
           <textarea id="assetText" placeholder="一张图、一个链接、一句收藏的文案，或者你今天的一个片段…"></textarea>
           <div class="composer-bottom">
             <select id="assetAccount"><option value="三个账号都可">三个账号都可</option><option value="九十">九十</option><option value="VuslatQ">VuslatQ</option><option value="Vuslat_19">Vuslat_19</option></select>
-            <button id="saveAsset">存进素材池</button>
+            <div class="composer-actions"><label class="upload-image" for="assetImage">＋ 上传图片</label><input id="assetImage" type="file" accept="image/*" /><button id="saveAsset">存进素材池</button></div>
           </div>
         </div>
         <div id="assetList" class="asset-list"></div>
@@ -69,7 +69,7 @@
       <section id="make" class="workspace-section make-section">
         <div class="section-heading"><p>发布包</p><h2>选中一个方向，再把它做完整</h2></div>
         <div id="publishEmpty" class="empty-state">先在上方勾选一个选题。<br /><span>这里会生成你需要的标题、结构和素材清单。</span></div>
-        <article id="publishCard" class="publish-card hidden"></article>
+        <div id="publishScroller" class="publish-scroller hidden" aria-label="已选择的发布包"></div>
       </section>
 
       <section id="review" class="workspace-section review-section">
@@ -87,7 +87,7 @@
       <p class="eyebrow">素材池</p><h2>先留下，不急着做完</h2>
       <textarea id="dialogAssetText" placeholder="粘贴文案、图片路径、链接或灵感碎片…"></textarea>
       <select id="dialogAssetAccount"><option value="三个账号都可">三个账号都可</option><option value="九十">九十</option><option value="VuslatQ">VuslatQ</option><option value="Vuslat_19">Vuslat_19</option></select>
-      <button id="dialogSave">存进素材池</button>
+      <label class="upload-image dialog-upload" for="dialogAssetImage">＋ 上传图片</label><input id="dialogAssetImage" type="file" accept="image/*" /><button id="dialogSave">存进素材池</button>
     </dialog>
     <script src="./app.js"></script>
   </body>
